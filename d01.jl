@@ -1,17 +1,23 @@
-numbers = readlines("data/d01.txt")
-numbers = map((x) -> parse(Int64, x), numbers)
-
-global count = 0
-for i in 2:length(numbers)
-    global count
-    count += (numbers[i-1] < numbers[i])
+function part_1(numbers)
+    count = 0
+    for i in 2:length(numbers)
+        count += (numbers[i-1] < numbers[i])
+    end
+    println(count)
 end
-println(count)
 
-count = 0
-for i in 2:(length(numbers) - 2)
-    global count
-    count += (numbers[i-1] < numbers[i+2])
+function part_2(numbers)
+    count = 0
+    for i in 2:(length(numbers) - 2)
+        count += (numbers[i-1] < numbers[i+2])
+    end
+    println(count)
 end
-println(count)
+
+input = readlines("data/d01.txt")
+input = map((x) -> parse(Int64, x), input)
+
+part_1(input)
+part_2(input)
+
 
