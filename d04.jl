@@ -64,6 +64,5 @@ function part_2(input)
     end
 end
 
-
 part_1("data/d04.txt")
 part_2("data/d04.txt")
