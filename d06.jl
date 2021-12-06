@@ -2,7 +2,7 @@ function parse_input(input)
     return map((x) -> (parse(Int64, x)), split(chomp(readline(input)), ","))
 end
 
-function part_1_and_2(MAX_DAYS)
+function parts_1_and_2(MAX_DAYS)
     input = parse_input("data/d06.txt")
     counter = zeros(Int128,(9,))
 
