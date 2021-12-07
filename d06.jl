@@ -22,5 +22,5 @@ function parts_1_and_2(MAX_DAYS)
     println(sum(counter))
 end
 
-part_1_and_2(80)
-part_1_and_2(256)
+parts_1_and_2(80)
+parts_1_and_2(256)
