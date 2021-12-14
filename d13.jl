@@ -24,13 +24,11 @@ function fold_it(point, fold_point, axis, max_x, max_y)
 
     if axis == "y"
         if y > fold_point
-            y = (fold_point - (y - fold_point)) + max(0, (max_y - fold_point) - fold_point)
-        else
-            y = y - max(0, (max_y - fold_point) - fold_point)
+            y = (fold_point - (y - fold_point))
         end
     else
         if x < fold_point
-            x = abs(x - fold_point)
+            x = fold_point - x
         else
             x = x - fold_point
         end
