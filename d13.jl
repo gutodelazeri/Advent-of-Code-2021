@@ -24,7 +24,9 @@ function fold_it(point, fold_point, axis, max_x, max_y)
 
     if axis == "y"
         if y > fold_point
-            y = (fold_point - (y - fold_point))
+            y = (fold_point - (y - fold_point)) + max(0, max_y - 2*fold_point)
+        else
+            y = y + max(0, max_y - 2*fold_point)
         end
     else
         if x < fold_point
@@ -41,7 +43,7 @@ function parts_1_and_2(input)
     for (axis, fold_point) in folds
         dim_x = maximum(x -> x[1], points)
         dim_y = maximum(x -> x[2], points)
-        points = unique(map(x -> fold_it(x, fold_point, axis, dim_x, dim_y), points))
+        points = unique(map(x -> fold_it(x, fold_point, axis, dim_x, dim_y), points))        
         println(length(points))
     end
 
@@ -57,6 +59,7 @@ function parts_1_and_2(input)
         end
         @printf("\n")
     end
+
 end
 
 parts_1_and_2("data/d13.txt")
