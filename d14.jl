@@ -20,9 +20,9 @@ function parse_input(input)
     return dict, set, template_pairs, template[1], template[end]
 end
 
-function part_1(input)
+function parts_1_and_2(input, iters)
     d, s, tp, first, last = parse_input(input)
-    for iter in 1:40
+    for iter in 1:iters
         to_insert = Vector{Tuple{String, Int128}}()
         to_remove =  Vector{Tuple{String, Int128}}()
         for (key, value) in tp
@@ -54,4 +54,5 @@ function part_1(input)
     println(Int128((maximum(vals) - minimum(vals))/2))
 end
 
-part_1("data/d14.txt")
+parts_1_and_2("data/d14.txt", 10)
+parts_1_and_2("data/d14.txt", 40)
