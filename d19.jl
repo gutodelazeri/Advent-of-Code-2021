@@ -14,6 +14,7 @@ function parse_input(input)
         scanners[count] = list_of_coords
         count += 1
     end
+    close(f)
     return scanners
 end
 

@@ -1,8 +1,6 @@
 function parse_input(input)
     f = open(input, "r")
-
     draws = map((x) -> parse(Int64, x), split(readline(f), ","))
-    
     boards = Matrix{Int64}[]
     while !eof(f) 
         current_board = Array{Int64}(undef, 5, 5)
@@ -13,9 +11,7 @@ function parse_input(input)
         end
         push!(boards, current_board)
     end
-    
     close(f)
-
     return boards, draws
 end
 

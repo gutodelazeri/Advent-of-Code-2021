@@ -17,6 +17,7 @@ function parse_input(input)
         template_pairs[template[i:i+1]] = get!(template_pairs, template[i:i+1], 0) + 1
     end
 
+    close(f)
     return dict, set, template_pairs, template[1], template[end]
 end
 
