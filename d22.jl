@@ -26,13 +26,11 @@ function get_intersection_cuboid(c1, c2)
     return NTuple{6, Int64}(coords)
 end
 
-
 function get_cuboid_volume(c)
     s = (c[1] ? 1 : -1)
     v = (c[3] - c[2] + 1) * (c[5] - c[4] + 1) * (c[7] - c[6] + 1)
     return s * v
 end
-
 
 function part_1(input)
     instructions = parse_input(input)
